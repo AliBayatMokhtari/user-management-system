@@ -173,6 +173,7 @@ func (h *UserHandler) Update(w http.ResponseWriter, r *http.Request) {
 		return
 
 	}
+
 	respondSuccess(w, http.StatusOK, user)
 }
 
