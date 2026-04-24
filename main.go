@@ -22,10 +22,8 @@ func main() {
 		log.Fatal("failed to connect database:", err)
 	}
 
-	// Auto-migrate the schema
 	db.AutoMigrate(&model.User{})
 
-	// Build the graph
 	repo := repository.NewGormUserRepository(db)
 	userSvc := service.NewUserService(repo)
 	userHandler := handler.NewUserHandler(userSvc)
